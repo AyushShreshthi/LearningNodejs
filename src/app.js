@@ -11,6 +11,8 @@ import userRouter from "./routes/user.route.js"
 app.use("/api/v1/users", userRouter);
 //app.use("/api/v1/posts", postRouter);
 
-// http://localhost:8000/api/v1/users/register
+// http://localhost:4000/api/v1/users/register
+// http://localhost:4000/api/v1/users/login
+// http://localhost:4000/api/v1/users/logout
 
 export default app;
