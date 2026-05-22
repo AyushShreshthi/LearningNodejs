@@ -1,4 +1,4 @@
-import { User } from "../models/users.model.js";
+import { User } from "../models/user.model.js";
 
 const registerUser = async (req, res) => {
     try {
@@ -20,9 +20,18 @@ const registerUser = async (req, res) => {
             email : email.toLowerCase(),
             password,
             loggedIn: false
-        })
+        });
+
+        res.status(201).json({message: "User registered successfully", user:{
+            id : user._id,
+            username : user.username,
+            email : user.email,
+        }})
     }
     catch(error){
         res.status(500).json({message: "Internal Server Error", error: error.message})  
     }
 } 
+
+
+export{ registerUser}
