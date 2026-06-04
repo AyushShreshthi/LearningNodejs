@@ -4,6 +4,7 @@ import errorHandler from "./middleware/errorhandler.js";
 const app = express();
 
 app.use(express.json()); // to parse incoming JSON data in request bodies
+app.use(express.urlencoded({ extended: true })); // to parse URL-encoded data from forms
 
 import userRouter from "./routes/user.route.js"
 import postRouter from "./routes/post.route.js"
